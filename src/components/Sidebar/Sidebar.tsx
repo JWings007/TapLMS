@@ -8,7 +8,7 @@ function Sidebar() {
 
   return (
     <motion.div
-      className={`h-screen fixed z-50 top-0 left-0 py-8 px-5 flex flex-col justify-between transition-all duration-300 bg-white`}
+      className={`h-screen fixed z-50 top-0 left-0 py-8 px-5 flex-col justify-between transition-all duration-300 bg-white hidden lg:flex`}
     >
       <div>
         <img src={logo} alt="Logo" className="w-10" />

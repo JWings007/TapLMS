@@ -1,10 +1,12 @@
 import Lottie from "lottie-react";
 import confetti from "../../assets/Lottie/confetti.json";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { toast } from "sonner";
 
 function SuccessModal(props: {success: boolean, setSuccess: () => void}) {
   const copyReferralCode = (code: string) => {
     navigator.clipboard.writeText(code);  
+    toast.success('Code copied to clipboard.')
   };
 
   useEffect(() => {
@@ -17,7 +19,7 @@ function SuccessModal(props: {success: boolean, setSuccess: () => void}) {
   }, [props.success]);
   if (!props.success) return null;
   return (
-    <div className="fixed w-full h-screen top-0 bg-black/50 flex items-center justify-center z-50">
+    <div className="fixed w-full h-screen top-0 bg-black/50 flex items-center justify-center z-50 px-4">
       <div className="bg-white rounded-lg max-w-md w-full p-6">
         <div className="text-center">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none">
@@ -32,7 +34,7 @@ function SuccessModal(props: {success: boolean, setSuccess: () => void}) {
           <p className="text-sm text-gray-500 mb-6">
             Share this code with your friend to earn rewards when they join.
           </p>
-          <div className="bg-gray-50 p-4 rounded-lg mb-6">
+          <div className="bg-gray-50 p-4 rounded-lg mb-6 border border-dashed border-gray-400">
             <p className="text-lg font-mono font-semibold text-gray-900">
               REF3054
             </p>
@@ -40,19 +42,19 @@ function SuccessModal(props: {success: boolean, setSuccess: () => void}) {
           <div className="flex space-x-3">
             <button
               onClick={() => copyReferralCode("REF3054")}
-              className="flex-1 px-4 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-700 transition flex items-center justify-center gap-3 cursor-pointer"
+              className="flex-1 px-4 py-2 bg-[#2587c8] text-white rounded-lg hover:-translate-y-0.5 transition flex items-center justify-center gap-3 cursor-pointer text-sm sm:text-base"
             >
               <i className="fi fi-rr-copy-alt flex items-center justify-center"></i>
               Copy Code
             </button>
-            <button className="flex-1 px-4 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-700 transition flex items-center justify-center gap-3 cursor-pointer">
+            <button className="flex-1 px-4 py-2 bg-[#2587c8] text-white rounded-lg hover:-translate-y-0.5 transition flex items-center justify-center gap-3 cursor-pointer text-sm sm:text-base">
               <i className="fi fi-rr-share flex items-center justify-center"></i>
               Share
             </button>
           </div>
           <button
             onClick={props.setSuccess}
-            className="w-full mt-4 px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400 cursor-pointer transition"
+            className="w-full mt-4 px-4 py-2 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 cursor-pointer transition text-sm sm:text-base"
           >
             Close
           </button>

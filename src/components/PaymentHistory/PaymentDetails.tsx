@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 type Referral = {
   id: number;
   amount: number;
@@ -14,14 +12,14 @@ const paymentData: Referral[] = [
     id: 2,
     amount: 18000,
     date: "10/01/2025",
-    tid: "TXNBX204",
+    tid: "--",
     status: "Pending",
   },
   {
     id: 3,
     amount: 22000,
     date: "05/01/2025",
-    tid: "TXNCY305",
+    tid: "--",
     status: "Failed",
   },
   { id: 4, amount: 27000, date: "02/01/2025", tid: "TXNDZ406", status: "Paid" },
@@ -29,7 +27,7 @@ const paymentData: Referral[] = [
     id: 5,
     amount: 15000,
     date: "28/12/2024",
-    tid: "TXNEE507",
+    tid: "--",
     status: "Pending",
   },
   { id: 6, amount: 30000, date: "25/12/2024", tid: "TXNFF608", status: "Paid" },
@@ -47,7 +45,7 @@ const PaymentDetails = () => {
         </div>
       </div>
       <div className="overflow-x-auto">
-        <table className="w-full rounded-lg overflow-hidden">
+        <table className="w-full rounded-lg overflow-hidden text-nowrap">
           <thead>
             <tr className="bg-gray-100 text-gray-600 text-left text-sm">
               <th className="p-3">Installment</th>
@@ -65,16 +63,26 @@ const PaymentDetails = () => {
                 <td className="p-3 text-sm">{txn.date}</td>
                 <td className="p-3 text-sm">{txn.tid}</td>
                 <td className="p-3 text-xs flex items-center gap-2">
-                  <span className={`px-3 rounded-full bg-gray-100 flex items-center gap-2`}>
-                    <div
-                      className={`w-2 h-2 rounded-full ${
-                        txn.status === "Paid"
-                          ? "bg-green-400"
-                          : txn.status === "Failed"
-                          ? "bg-red-400"
-                          : "bg-yellow-400"
-                      }`}
-                    ></div>
+                  <span
+                    className={`px-3 py-1 rounded-full ${
+                      txn.status === "Paid"
+                        ? "bg-green-200"
+                        : txn.status === "Failed"
+                        ? "bg-red-200"
+                        : "bg-yellow-200"
+                    } flex items-center gap-2`}
+                  >
+                    <span>
+                      <i
+                        className={`fi fi-rr-${
+                          txn.status === "Paid"
+                            ? "completed"
+                            : txn.status === "Failed"
+                            ? "fail"
+                            : "clock-three"
+                        } flex items-center justify-center`}
+                      ></i>
+                    </span>
                     {txn.status}
                   </span>
                 </td>
