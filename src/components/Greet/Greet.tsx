@@ -1,5 +1,4 @@
 import Lottie from "lottie-react";
-import Button from "../Buttons/Button";
 import Info from "../InfoTile/Info";
 import wave from "../../assets/Lottie/wave.json";
 
@@ -12,12 +11,15 @@ function Greet(props: { setOpen: () => void }) {
       <div className="flex justify-between items-center">
         <div className="flex items-center justify-start">
           <h1 className="text-4xl font-medium">Good morning, User!</h1>
-          <div className="w-20">
+          <div className="w-16 flex items-center justify-center">
             <Lottie animationData={wave} loop={true} />
           </div>
         </div>
         <div>
-          <Button text="Refer a friend" setOpen={props.setOpen} action="" />
+          <button className="bg-[#2160ad] text-white flex items-center justify-center gap-3 px-3 py-2 rounded-2xl text-base cursor-pointer hover:bg-[#e8cfff] transition-all" onClick={props.setOpen}>
+          <i className="fi fi-rr-indian-rupee-sign flex items-center justify-center"></i>
+            <span>Refer and Earn</span>
+          </button>
         </div>
       </div>
       <div className="flex flex-wrap items-center gap-10 font">
