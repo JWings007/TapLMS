@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import logo from "../../assets/images/logo.png";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -7,7 +6,7 @@ function Sidebar() {
   const navigate = useNavigate();
 
   return (
-    <motion.div
+    <div
       className={`h-screen fixed z-50 top-0 left-0 py-8 px-5 flex-col justify-between transition-all duration-300 bg-white hidden lg:flex`}
     >
       <div>
@@ -50,7 +49,7 @@ function Sidebar() {
           <i className="fi fi-rr-power text-xl flex items-center justify-center"></i>
         </span>
       </button>
-    </motion.div>
+    </div>
   );
 }
 

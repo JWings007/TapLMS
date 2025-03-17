@@ -1,9 +1,10 @@
 function QuickTips() {
   return (
-    <div className="space-y-6 shadow p-5 rounded-lg">
-      <h1 className="text-2xl font-medium">Know how Referral work</h1>
-      <div className="flex items-start space-x-4">
-        <div className="p-2 bg-indigo-100 rounded-lg">
+    <div className="space-y-3 shadow p-5 rounded-lg bg-white">
+      <h1 className="text-2xl font-semibold mb-1">Know how Referral work</h1>
+      <p className="text-sm mb-4">Follow below steps to earn referral bonus.</p>
+      <div className="flex items-start space-x-4 bg-gray-50 p-4 rounded-xl border border-gray-200">
+        <div className="p-2 bg-indigo-100 rounded-full">
           <i className="fi fi-rr-link-alt flex items-center justify-center"></i>
         </div>
         <div>
@@ -16,8 +17,8 @@ function QuickTips() {
         </div>
       </div>
 
-      <div className="flex items-start space-x-4">
-        <div className="p-2 bg-purple-100 rounded-lg">
+      <div className="flex items-start space-x-4 bg-gray-50 p-4 rounded-xl border border-gray-200">
+        <div className="p-2 bg-purple-100 rounded-full">
           <i className="fi fi-rr-user flex items-center justify-center"></i>
         </div>
         <div>
@@ -30,8 +31,8 @@ function QuickTips() {
         </div>
       </div>
 
-      <div className="flex items-start space-x-4">
-        <div className="p-2 bg-green-100 rounded-lg">
+      <div className="flex items-start space-x-4 bg-gray-50 p-4 rounded-xl border border-gray-200">
+        <div className="p-2 bg-green-100 rounded-full">
           <i className="fi fi-rr-usd-circle flex items-center justify-center"></i>
         </div>
         <div>

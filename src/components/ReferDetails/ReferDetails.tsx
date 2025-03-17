@@ -12,36 +12,36 @@ const referralsData: Referral[] = [
     friendName: "John Doe",
     course: "React Basics",
     status: "Registered",
-    date: "June 12-14, 2024",
+    date: "1 / Jan / 2025",
   },
   {
     id: 2,
     friendName: "Jane Smith",
     course: "Full Stack Dev",
     status: "Pending",
-    date: "June 11-14, 2024",
+    date: "10 / Dec / 2025",
   },
   {
     id: 3,
     friendName: "Alice Brown",
     course: "UI/UX Design",
     status: "Rejected",
-    date: "June 13, 2024",
+    date: "2 / Apr / 2024",
   },
   {
     id: 4,
     friendName: "Mike Ross",
     course: "Cyber Security",
     status: "Registered",
-    date: "June 6-7, 2024",
+    date: "31 / Jan / 2024",
   },
 ];
 
 const ReferDetails = () => {
   return (
-    <div className="w-full max-w-5xl px-5">
+    <div className="w-full max-w-5xl px-5 bg-white py-5 rounded-lg">
       <div className="flex justify-between items-center mb-4">
-        <div>
+        <div className="">
           <h2 className="text-xl font-semibold">Referral History</h2>
           <p className="text-gray-500 text-sm">
             See your referral tracking history
@@ -51,7 +51,7 @@ const ReferDetails = () => {
       <div className="overflow-x-auto">
         <table className="w-full rounded-lg overflow-hidden text-nowrap">
           <thead className="">
-            <tr className="bg-gray-100 text-gray-600 text-left text-sm">
+            <tr className="text-gray-600 text-left text-sm bg-gray-100 border border-gray-100">
               <th className="p-3">Friend's Name</th>
               <th className="p-3">Course</th>
               <th className="p-3">Date</th>
@@ -60,7 +60,7 @@ const ReferDetails = () => {
           </thead>
           <tbody>
             {referralsData.map((referral) => (
-              <tr key={referral.id} className="hover:bg-gray-50">
+              <tr key={referral.id} className="hover:bg-gray-50 border border-gray-100">
                 <td className="p-3 text-sm">{referral.friendName}</td>
                 <td className="p-3 text-sm">{referral.course}</td>
                 <td className="p-3 text-sm">{referral.date}</td>

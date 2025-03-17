@@ -35,9 +35,9 @@ const paymentData: Referral[] = [
 
 const PaymentDetails = () => {
   return (
-    <div className="w-full max-w-5xl px-5">
+    <div className="w-full max-w-5xl px-5 bg-white py-5 rounded-lg">
       <div className="flex justify-between items-center mb-4">
-        <div>
+        <div className="">
           <h2 className="text-xl font-semibold">Payment Details</h2>
           <p className="text-gray-500 text-sm">
             See your transaction details here
@@ -47,7 +47,7 @@ const PaymentDetails = () => {
       <div className="overflow-x-auto">
         <table className="w-full rounded-lg overflow-hidden text-nowrap">
           <thead>
-            <tr className="bg-gray-100 text-gray-600 text-left text-sm">
+            <tr className="text-gray-600 bg-gray-100 text-left text-sm border border-gray-100">
               <th className="p-3">Installment</th>
               <th className="p-3">Amount</th>
               <th className="p-3">Date</th>
@@ -57,7 +57,7 @@ const PaymentDetails = () => {
           </thead>
           <tbody>
             {paymentData.map((txn) => (
-              <tr key={txn.id} className="hover:bg-gray-50">
+              <tr key={txn.id} className="hover:bg-gray-50 border border-gray-100">
                 <td className="p-3 text-sm">{txn.id}</td>
                 <td className="p-3 text-sm">{txn.amount}</td>
                 <td className="p-3 text-sm">{txn.date}</td>
